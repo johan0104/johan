@@ -41,8 +41,8 @@ Radio
 Clé
 Serpent
 Dragon
-Pomme de terre
-Étoile de mer
+Portable
+Praline
 Champ
 Vent
 Sirène
@@ -88,12 +88,12 @@ Nuage
 Miel
 Île
 Champignon
-Pomme de terre
+Medicament
 Guitare
 Vent
 Rivière
 Chapeau
-Arc-en-ciel
+Pastille
 Lion
 Tigre
 Coccinelle
