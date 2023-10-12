@@ -7,5 +7,8 @@ import (
 func Ecriremot() {
 	mot := []byte("Salut")
 	os.WriteFile("mot.txt", mot, 0644)
+}
 
+func SupprimerMot() {
+	os.Remove("mot.txt")
 }
