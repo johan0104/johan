@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import h "hangman/Hangman"
 
 func main() {
-	fmt.Println("Hello")
+	h.Nbrrandom()
 }
