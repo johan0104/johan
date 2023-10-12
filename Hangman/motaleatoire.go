@@ -2,6 +2,6 @@ package hangman
 
 import "fmt"
 
-func nbrrandom() {
+func Nbrrandom() {
 	fmt.Println("fge")
 }
