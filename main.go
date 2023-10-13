@@ -3,5 +3,5 @@ package main
 import h "hangman/Hangman"
 
 func main() {
-	h.InterfaceJeu()
+	h.Menu()
 }
