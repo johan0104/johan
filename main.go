@@ -1,7 +1,16 @@
 package main
 
-import h "hangman/Hangman"
+import (
+	"fmt"
+	h "hangman/Hangman"
+)
 
 func main() {
-	h.Nbrrandom()
+	randomWord, err := h.GetRandomWordFromFile("Hangman/dico.txt")
+	if err != nil {
+		fmt.Println("Erreur de lecture:", err)
+		return
+	}
+
+	fmt.Println("Le mot choisi est:", randomWord)
 }
