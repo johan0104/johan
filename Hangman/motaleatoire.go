@@ -40,6 +40,6 @@ func GenerateRandomNumber(max int) int {
 		return
 	}
 
-	fmt.Println("Le mot choisi est:", randomWord) 
+	fmt.Println("Le mot choisi est:", randomWord)
 
 }	*/

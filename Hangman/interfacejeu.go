@@ -11,7 +11,6 @@ func InterfaceJeu() {
 	fmt.Println("Le mot à deviner : ")
 	AffichageTirets("Salut")
 	tentatives := 10
-
 	var MotTrouvé bool
 	var choixlettres string
 	for tentatives > 0 && MotTrouvé == false {
@@ -32,7 +31,7 @@ func InterfaceJeu() {
 				MotTrouvé = true
 			} else {
 				fmt.Println("Le mot n'est pas bon")
-				tentatives--
+				tentatives -= 2
 			}
 		}
 
@@ -44,4 +43,5 @@ func InterfaceJeu() {
 		fmt.Println("Vous n'avez plus de tentatives")
 		Menu()
 	}
+
 }
