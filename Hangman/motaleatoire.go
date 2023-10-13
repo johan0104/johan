@@ -2,8 +2,8 @@ package hangman
 
 import (
 	"bufio"
+	"math/rand"
 	"os"
-	"time"
 )
 
 func GetRandomWordFromFile(filename string) (string, error) {
@@ -30,8 +30,16 @@ func GetRandomWordFromFile(filename string) (string, error) {
 }
 
 func GenerateRandomNumber(max int) int {
-	seed := time.Now().UnixNano()
-	random := seed % int64(max)
-	return int(random)
+	return rand.Intn(150)
 }
 
+/*func main() {
+	randomWord, err := h.GetRandomWordFromFile("hangman/dico.txt")
+	if err != nil {
+		fmt.Println("Erreur de lecture:", err)
+		return
+	}
+
+	fmt.Println("Le mot choisi est:", randomWord) 
+
+}	*/
