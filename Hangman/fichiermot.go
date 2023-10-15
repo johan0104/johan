@@ -21,3 +21,13 @@ func Ecriremot() {
 func SupprimerMot() {
 	os.Remove("mot.txt")
 }
+
+// Fonction pour lire le mot dans le mot.txt
+func LireFichierMot() string {
+	ContenueFichierMot, err := os.ReadFile("mot.txt")
+	if err != nil {
+		fmt.Println("Erreur de lecture")
+	}
+	fmt.Println(string(ContenueFichierMot))
+	return string(ContenueFichierMot)
+}
