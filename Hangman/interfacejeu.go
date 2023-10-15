@@ -25,7 +25,7 @@ func InterfaceJeu() {
 		fmt.Scan(&choixlettres)
 		// CAS SI le joueur indique une lettre
 		if len(choixlettres) == 1 {
-			if strings.Contains("salut", choixlettres) {
+			if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé une lettre")
 			} else {
 				fmt.Println("Cette lettre n'est pas dans le mot")
@@ -35,7 +35,7 @@ func InterfaceJeu() {
 		}
 		//CAS SI le joueur indique un mot
 		if len(choixlettres) > 1 {
-			if strings.Contains("salut", choixlettres) {
+			if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé le mot")
 				//MOT TROUVE = TRUE donc la boucle se termine
 				MotTrouvé = true
@@ -50,10 +50,16 @@ func InterfaceJeu() {
 	//FIN DE LA BOUCLE avec mot = TRUE donc gagné
 	if MotTrouvé == true {
 		fmt.Println("Vous avez gagné")
+		fmt.Println("")
+		fmt.Println("")
+		fmt.Println("")
 		InterfaceJeu()
 	} else {
 		// FIN DE LA BOUCLE avec tentatives = 0 donc perdu
 		fmt.Println("Vous n'avez plus de tentatives")
+		fmt.Println("")
+		fmt.Println("")
+		fmt.Println("")
 		InterfaceJeu()
 	}
 
