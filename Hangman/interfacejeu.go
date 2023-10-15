@@ -11,9 +11,10 @@ func InterfaceJeu() {
 	SupprimerMot()
 	// Ecrit le mot aléatoire dans le fichier mot.txt (en le créant)
 	Ecriremot()
+	Word := LireFichierMot()
 	fmt.Println("Le mot à deviner : ")
 	//On affiche le mot en tiret + espace
-	AffichageTirets("Salut")
+	AffichageTirets(Word)
 	tentatives := 10
 	var MotTrouvé bool
 	var choixlettres string
@@ -49,11 +50,11 @@ func InterfaceJeu() {
 	//FIN DE LA BOUCLE avec mot = TRUE donc gagné
 	if MotTrouvé == true {
 		fmt.Println("Vous avez gagné")
-		Menu()
+		InterfaceJeu()
 	} else {
 		// FIN DE LA BOUCLE avec tentatives = 0 donc perdu
 		fmt.Println("Vous n'avez plus de tentatives")
-		Menu()
+		InterfaceJeu()
 	}
 
 }

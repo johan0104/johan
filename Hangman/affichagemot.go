@@ -6,7 +6,7 @@ import (
 )
 
 // Affiche le mot choisi en tiret avec un espace entre chaque tiret
-func AffichageTirets(mot string) {
-	motTirets := strings.Repeat("- ", len(mot))
+func AffichageTirets(ContenueFichierMot string) {
+	motTirets := strings.Repeat("- ", len(ContenueFichierMot))
 	fmt.Println(motTirets)
 }
