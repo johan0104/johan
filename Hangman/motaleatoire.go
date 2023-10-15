@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// FONCTION POUR PRENDRE UN MOT DANS LE FICHIER DICO.TXT GRACE AU NOMBRE RANDOM
 func GetRandomWordFromFile(filename string) (string, error) {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -29,6 +30,7 @@ func GetRandomWordFromFile(filename string) (string, error) {
 	return words[randomIndex], nil
 }
 
+// FONCTION QUI GENERE LE NOMBRE RANDOM
 func GenerateRandomNumber(max int) int {
 	return rand.Intn(150)
 }
