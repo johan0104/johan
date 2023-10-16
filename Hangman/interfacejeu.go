@@ -69,6 +69,9 @@ func InterfaceJeu() {
 		fmt.Println("")
 		fmt.Println("Vous n'avez plus de tentatives")
 		fmt.Println("")
+		fmt.Printf("Le mot était %s", Word)
+		fmt.Println("")
+		fmt.Println("")
 		fmt.Println("")
 		InterfaceJeu()
 	}
