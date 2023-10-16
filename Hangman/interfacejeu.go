@@ -15,12 +15,13 @@ func InterfaceJeu() {
 	fmt.Println("Le mot à deviner : ")
 	//On affiche le mot en tiret + espace
 	AffichageTirets(Word)
-	tentatives := 10
+	tentatives := 9
 	var MotTrouvé bool
 	var choixlettres string
 	// tant que les tentatives sont au dessus de 0 et le mot n'est pas trouvé boucle continue.
 	for tentatives > 0 && MotTrouvé == false {
 		fmt.Printf("Il vous reste : %d tentatives\n", tentatives)
+		AffichagePendu(tentatives)
 		fmt.Println("Entrez une lettre ou le mot entier : ")
 		fmt.Scan(&choixlettres)
 		// CAS SI le joueur indique une lettre
@@ -52,12 +53,19 @@ func InterfaceJeu() {
 		fmt.Println("Vous avez gagné")
 		fmt.Println("")
 		fmt.Println("")
-		fmt.Println("")
 		InterfaceJeu()
 	} else {
 		// FIN DE LA BOUCLE avec tentatives = 0 donc perdu
-		fmt.Println("Vous n'avez plus de tentatives")
+		fmt.Println(` 
+ +-------+  
+     |   |  
+     O   |  
+    /|\  |  
+    / \  |  
+	 |  
+==========`)
 		fmt.Println("")
+		fmt.Println("Vous n'avez plus de tentatives")
 		fmt.Println("")
 		fmt.Println("")
 		InterfaceJeu()
