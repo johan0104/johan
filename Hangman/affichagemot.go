@@ -2,11 +2,23 @@ package hangman
 
 import (
 	"fmt"
-	"strings"
 )
 
 // Affiche le mot choisi en tiret avec un espace entre chaque tiret
-func AffichageTirets(ContenueFichierMot string) {
-	motTirets := strings.Repeat("- ", len(ContenueFichierMot))
-	fmt.Println(motTirets)
+func AffichageTirets(Word string) {
+	for _, lettre := range Word{
+		lettreTrouvee := false
+		for _, lettresTrouvee := range LettresTrouvees {
+			if string(lettre) == LettresTrouvees {
+				lettresTrouvee = true
+				break
+			}
+		}
+		if lettreTrouvee {
+			fmt.Print(string(lettre), " ")
+		} else {
+			fmt.Print("_ ")
+		}
+	}
+	fmt.Println()
 }

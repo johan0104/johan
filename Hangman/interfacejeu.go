@@ -27,7 +27,8 @@ func InterfaceJeu() {
 		if len(choixlettres) == 1 {
 			if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé une lettre")
-			} else {
+				LettresTrouvees = append(LettresTrouvees, choixlettres)
+				} else {
 				fmt.Println("Cette lettre n'est pas dans le mot")
 				// décremente les tentatives car le joueur se trompe
 				tentatives--

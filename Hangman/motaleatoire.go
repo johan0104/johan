@@ -35,13 +35,3 @@ func GenerateRandomNumber(max int) int {
 	return rand.Intn(150)
 }
 
-/*func main() {
-	randomWord, err := h.GetRandomWordFromFile("hangman/dico.txt")
-	if err != nil {
-		fmt.Println("Erreur de lecture:", err)
-		return
-	}
-
-	fmt.Println("Le mot choisi est:", randomWord)
-
-}	*/
