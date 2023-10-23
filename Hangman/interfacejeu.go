@@ -39,7 +39,7 @@ func InterfaceJeu() {
 		}
 		//CAS SI le joueur indique un mot
 		if len(choixlettres) > 1 {
-			if strings.Contains(Word, choixlettres) {
+			if Word == choixlettres {
 				fmt.Println("Vous avez trouvé le mot")
 				//MOT TROUVE = TRUE donc la boucle se termine
 				MotTrouvé = true
