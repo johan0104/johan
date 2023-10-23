@@ -6,19 +6,18 @@ import (
 
 // Affiche le mot choisi en tiret avec un espace entre chaque tiret
 func AffichageTirets(Word string) {
-	for _, lettre := range Word{
+	lettresfind := LettresTrouvees
+	for i := range Word {
 		lettreTrouvee := false
-		for _, lettresTrouvee := range LettresTrouvees {
-			if string(lettre) == LettresTrouvees {
-				lettresTrouvee = true
+		for _, lettre := range lettresfind {
+			if Word[i:i+1] == lettre {
+				fmt.Printf("%c ", Word[i])
+				lettreTrouvee = true
 				break
 			}
 		}
-		if lettreTrouvee {
-			fmt.Print(string(lettre), " ")
-		} else {
+		if !lettreTrouvee {
 			fmt.Print("_ ")
 		}
 	}
-	fmt.Println()
 }

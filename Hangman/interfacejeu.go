@@ -7,6 +7,7 @@ import (
 
 // Fonction d'Interface de jeu
 func InterfaceJeu() {
+	LettresTrouvees = []string{}
 	//Supprime le fichier mot.txt pour éviter les conflits
 	SupprimerMot()
 	// Ecrit le mot aléatoire dans le fichier mot.txt (en le créant)
@@ -15,12 +16,12 @@ func InterfaceJeu() {
 	fmt.Println("Le mot à deviner : ")
 	fmt.Println("")
 	//On affiche le mot en tiret + espace
-	AffichageTirets(Word)
 	tentatives := 9
 	var MotTrouvé bool
 	var choixlettres string
 	// tant que les tentatives sont au dessus de 0 et le mot n'est pas trouvé boucle continue.
 	for tentatives > 0 && MotTrouvé == false {
+		AffichageTirets(Word)
 		AffichagePendu(tentatives)
 		fmt.Println("")
 		fmt.Print("Entrez une lettre ou le mot entier : ")
@@ -29,6 +30,7 @@ func InterfaceJeu() {
 		if len(choixlettres) == 1 {
 			if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé une lettre")
+				LettresTrouver(choixlettres)
 			} else {
 				fmt.Println("Cette lettre n'est pas dans le mot")
 				// décremente les tentatives car le joueur se trompe
