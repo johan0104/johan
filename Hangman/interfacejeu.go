@@ -8,6 +8,7 @@ import (
 // Fonction d'Interface de jeu
 func InterfaceJeu() {
 	LettresTrouvees = []string{}
+	LettresChoisis = []string{}
 	//Supprime le fichier mot.txt pour éviter les conflits
 	SupprimerMot()
 	// Ecrit le mot aléatoire dans le fichier mot.txt (en le créant)
