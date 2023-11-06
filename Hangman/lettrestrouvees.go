@@ -1,5 +1,9 @@
 package hangman
 
+import (
+	"math/rand"
+)
+
 var LettresTrouvees []string
 var LettresChoisis []string
 
@@ -39,4 +43,8 @@ func Contains(slice []string, str string) bool {
 func LettresChoisi(choixlettres string) []string {
 	LettresChoisis = append(LettresChoisis, choixlettres)
 	return LettresChoisis
+}
+
+func ChoisirLettreAleatoire(word string) string {
+	return string(word[rand.Intn(len(word))])
 }
