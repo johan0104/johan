@@ -72,6 +72,8 @@ func InterfaceJeu() {
 	fmt.Println("\033[H\033[2J")
 	//FIN DE LA BOUCLE avec mot = TRUE donc gagné
 	if MotTrouvé == true {
+		fmt.Printf("Le mot était %s", Word)
+		fmt.Println("")
 		fmt.Println("Vous avez gagné")
 		fmt.Println("")
 		fmt.Println("")
