@@ -1,6 +1,7 @@
 package hangman
 
 var LettresTrouvees []string
+var LettresChoisis []string
 
 // Si la lettre est trouvée, l'envoi dans le slice LettresTrouvees
 func LettresTrouver(choixlettres string) []string {
@@ -9,7 +10,7 @@ func LettresTrouver(choixlettres string) []string {
 }
 
 func LettreDejaChoisie(lettre string) bool {
-	for _, l := range LettresTrouvees {
+	for _, l := range LettresChoisis {
 		if l == lettre {
 			return true
 		}
@@ -33,4 +34,9 @@ func Contains(slice []string, str string) bool {
 		}
 	}
 	return false
+}
+
+func LettresChoisi(choixlettres string) []string {
+	LettresChoisis = append(LettresChoisis, choixlettres)
+	return LettresChoisis
 }

@@ -22,23 +22,31 @@ func InterfaceJeu() {
 	// tant que les tentatives sont au dessus de 0 et le mot n'est pas trouvé boucle continue.
 	for tentatives > 0 && MotTrouvé == false {
 		AffichageTirets(Word)
+		fmt.Println("")
 		AffichagePendu(tentatives)
 		fmt.Println("")
+		fmt.Printf("Tentatives : %s\n", LettresChoisis)
 		fmt.Print("Entrez une lettre ou le mot entier : ")
 		fmt.Scan(&choixlettres)
+		fmt.Println("\033[H\033[2J")
 		// CAS SI le joueur indique une lettre
 		if len(choixlettres) == 1 {
 			if LettreDejaChoisie(choixlettres) {
 				fmt.Println("Vous avez déjà émis cette lettre")
+				fmt.Println("")
 				continue
 			} else if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé une lettre")
+				fmt.Println("")
+				LettresChoisi(choixlettres)
 				LettresTrouver(choixlettres)
 				if ToutesLettresTrouvees(Word, LettresTrouvees) {
 					MotTrouvé = true
 				}
 			} else {
 				fmt.Println("Cette lettre n'est pas dans le mot")
+				fmt.Println("")
+				LettresChoisi(choixlettres)
 				// décremente les tentatives car le joueur se trompe
 				tentatives--
 			}
@@ -51,12 +59,13 @@ func InterfaceJeu() {
 				MotTrouvé = true
 			} else {
 				fmt.Println("Le mot n'est pas bon")
+				fmt.Println("")
 				// LE MOT n'est pas bon donc les tentavies se réduisent de 2
 				tentatives -= 2
 			}
 		}
-
 	}
+	fmt.Println("\033[H\033[2J")
 	//FIN DE LA BOUCLE avec mot = TRUE donc gagné
 	if MotTrouvé == true {
 		fmt.Println("Vous avez gagné")

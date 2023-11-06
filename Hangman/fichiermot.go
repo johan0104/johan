@@ -28,6 +28,5 @@ func LireFichierMot() string {
 	if err != nil {
 		fmt.Println("Erreur de lecture")
 	}
-	fmt.Println(string(ContenueFichierMot))
 	return string(ContenueFichierMot)
 }
