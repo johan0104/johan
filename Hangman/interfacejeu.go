@@ -28,9 +28,15 @@ func InterfaceJeu() {
 		fmt.Scan(&choixlettres)
 		// CAS SI le joueur indique une lettre
 		if len(choixlettres) == 1 {
-			if strings.Contains(Word, choixlettres) {
+			if LettreDejaChoisie(choixlettres) {
+				fmt.Println("Vous avez déjà émis cette lettre")
+				continue
+			} else if strings.Contains(Word, choixlettres) {
 				fmt.Println("Vous avez trouvé une lettre")
 				LettresTrouver(choixlettres)
+				if ToutesLettresTrouvees(Word, LettresTrouvees) {
+					MotTrouvé = true
+				}
 			} else {
 				fmt.Println("Cette lettre n'est pas dans le mot")
 				// décremente les tentatives car le joueur se trompe
